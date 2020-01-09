@@ -7,13 +7,16 @@ import Employee from './components/employee'
 Vue.use(VueRouter);
 const routes = [{ 
   path: '/overview', 
-  component: Overview 
+  component: Overview
 },{
   path: '/department', 
   component: Department
 }, {
   path: '/employee',
   component: Employee
+},{
+  path: '**',
+  redirect: '/overview',
 }]
 
 const router = new VueRouter({

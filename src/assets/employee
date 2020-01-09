@@ -1,0 +1,29 @@
+Employee{
+     id: string;
+     name: string;
+     sex: string;
+     cardID: number;
+     birthday: string;
+     age: number;
+     department: string;
+     post: string;// 岗位
+     level: string;// 级别
+     retirementTime: Date;
+     highestEducation: string;
+     educationInfo: educationInfo;
+     registedResidence: string; //户口
+     residence: string;//居住地
+     workExperience: string;
+     LaborContract: string;//劳动合同
+    certificate: string[];//证书
+
+}
+
+educationInfo: {    
+    school: string;
+    discipline: string;// 专业
+    education: string;//学历
+    degree: string;// 学位
+    graduationTime: Date;// 毕业时间
+
+}

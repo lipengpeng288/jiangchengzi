@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-  <el-container>
-    <el-header class="header" height="64px" >
-      <el-row justify="start" type="flex">
-        <el-col :span="23" :pull="10"><div class="grid-content bg-purple" style="color: white; font-size: 20px;">员工信息管理系统</div></el-col>
-        <el-con :span="1" class="grid-content bg-purple">
-          <i class="el-icon-user"></i>
-        </el-con>
-      </el-row>
-    </el-header>
     <el-container>
-      <el-aside width="200px" height="100%;">
-        <div class="aside">
-            <div v-for="(val) in config" v-bind:key="val" class="item">
-              <el-row justify="start">
-                <el-col :span="12"><i :class="val.icon"></i></el-col>
-                <el-col :span="12" :pull="6"><router-link :to="val.link" style="text-decoration: none; color:#303133;">{{val.name}}</router-link></el-col>
-              </el-row>
-            </div>
-        </div>
-      </el-aside>
-      <el-main>
-         <router-view></router-view>
-      </el-main>
+      <el-header class="header" height="64px" >
+        <el-row justify="start" type="flex">
+          <el-col :span="23" :pull="10"><div class="grid-content bg-purple" style="color: white; font-size: 20px;">员工信息管理系统</div></el-col>
+          <el-col :span="1" class="grid-content bg-purple">
+            <i class="el-icon-user"></i>
+          </el-col>
+        </el-row>
+      </el-header>
+      <el-container>
+        <el-aside width="200px" height="100%;">
+          <div class="aside">
+              <div v-for="(val, index) in config" v-bind:key="index" class="item" :style="{background: index === configIndex ? '#BBDEFB' : '#FFFFFF'}">
+                <el-row justify="start">
+                  <el-col :span="12"><i :class="val.icon"></i></el-col>
+                  <el-col :span="12" :pull="6"><router-link :to="val.link" style="text-decoration: none; color:#303133;">{{val.name}}</router-link></el-col>
+                </el-row>
+              </div>
+          </div>
+        </el-aside>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+      </el-container>
     </el-container>
-  </el-container>
      
-    </div>
+  </div>
 </template>
 
 <script>
@@ -49,11 +49,32 @@
                     name: '部门',
                     icon: 'el-icon-s-custom',
                     link: '/department'
-                }]
+                }],
+                configIndex: 0
             }
         },
         name: 'app',
         components: { 
+        },
+        methods: {
+            checkRouterLocal(path) {
+                // 查找当前路由下标高亮
+                this.configIndex = this.config.findIndex(item => item.link === path);
+            }
+        },
+        watch: {
+            "$route"() {
+                // 获取当前路径
+                let path = this.$route.path;
+                // 检索当前路径
+                this.checkRouterLocal(path);
+            }
+        },
+        created: function() {
+            // 获取当前路径
+            let path = this.$route.path;
+            // 检索当前路径
+            this.checkRouterLocal(path);
         }
     }
 </script>
@@ -86,7 +107,9 @@
   border-right: 1px solid #DCDFE6; 
 }
 .item{
-  margin-bottom: 20px;
+  height: 45px;
+  line-height: 45px;
+  border: 2px solid rgba(0,0,0,0);
 }
 .el-row {
     margin-bottom: 20px;
