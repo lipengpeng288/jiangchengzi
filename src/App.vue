@@ -20,8 +20,8 @@
               </div>
           </div>
         </el-aside>
-        <el-main>
-          <router-view></router-view>
+        <el-main class="main-content">
+          <router-view style="box-sizing: border-box;"></router-view>
         </el-main>
       </el-container>
     </el-container>

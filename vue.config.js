@@ -2,7 +2,7 @@ module.exports = {
     devServer: {
       proxy: {
         '/api': {
-          target: 'https://localhost:8080/api/', //对应自己的接口
+          target: 'http://localhost:4000/api/v1', //对应自己的接口
           changeOrigin: true,
           ws: true,
           pathRewrite: {
