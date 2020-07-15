@@ -13,6 +13,9 @@
     "echarts": "^4.5.0",
     "echarts-gl": "^1.1.1",
     "element-ui": "^2.4.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
     "vue-echarts": "^4.1.0",
@@ -69,7 +72,7 @@
       ],
       "no-consecutive-blank-lines": false,
       "no-console": [
-        1
+        0
       ],
       "no-empty": 0,
       "no-inferrable-types": [

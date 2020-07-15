@@ -7,7 +7,6 @@ import router from './route';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 import ECharts from 'vue-echarts';
-
 import 'echarts/lib/chart/bar';
 import 'echarts-gl';
 
@@ -15,8 +14,11 @@ Vue.component('v-chart', ECharts)
 Vue.use(ElementUI);
 Vue.use(VueAxios, axios);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+// console.log(theme);
+// ECharts.registerTheme('macarons', theme)
 Vue.prototype.$echarts = ECharts;
+
 
 
 new Vue({

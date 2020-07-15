@@ -7,7 +7,7 @@
             </el-col>
             <el-col :span="19" :push="1" >
                 <div style="display: flex;  justify-content: flex-end;margin:0 10px 20px 0;">
-                    <el-button type="primary" size="mini">新增员工</el-button>
+                    <el-button type="primary">新增员工</el-button>
                 </div>
                 
                 <el-table :data="tableData" border style="width: 100%">

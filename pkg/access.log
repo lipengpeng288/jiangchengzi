@@ -1,0 +1,3 @@
+::ffff:127.0.0.1 - - [03/Feb/2020:10:11:45 +0000] "GET /api/v1/department?index=0&size=10 HTTP/1.1" 200 694 "http://localhost:3300/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+::ffff:127.0.0.1 - - [03/Feb/2020:10:11:47 +0000] "GET /api/v1/department?index=1&size=10 HTTP/1.1" 200 472 "http://localhost:3300/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+::ffff:127.0.0.1 - - [03/Feb/2020:10:11:48 +0000] "GET /api/v1/department?index=0&size=10 HTTP/1.1" 304 - "http://localhost:3300/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"

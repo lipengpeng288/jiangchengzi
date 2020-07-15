@@ -1,20 +1,20 @@
 <template>
     <div class="container">
-        <v-chart :options="dismissionPerMonthOption" class="echart"/>
+        <v-chart :options="dismissionPerMonthOption" class="echart" ref="echart1"/>
         <el-row type="flex" justify="space-between" style="margin-top: 20px;">
             <el-col :span="12">
-                <v-chart :options="staffOption" class="echart"/>
+                <v-chart :options="staffOption" class="echart" ref="echart2"/>
             </el-col>
             <el-col :span="12">
-                <v-chart :options="levelOption" class="echart"/>
+                <v-chart :options="levelOption" class="echart" ref="echart3"/>
             </el-col>
         </el-row>
         <el-row type="flex" style="margin-top: 20px;">
             <el-col :span="12">
-                <v-chart :options="educationByDepartmentOption" class="echart"/>
+                <v-chart :options="educationByDepartmentOption" class="echart" ref="echart4"/>
             </el-col>
             <el-col :span="12">
-                <v-chart :options="educationOption" class="echart"/>
+                <v-chart :options="educationOption" class="echart" ref="echart5" id="myChart01"/>
             </el-col>
         </el-row>
        
@@ -24,9 +24,6 @@
 <script>
     // import {getAsset} from '../service/api';
     import ECharts from 'vue-echarts'
-    // this.$echarts.init(document.getElementById('myChart01'),'macarons');
-    // import theme from 'echarts/theme/macarons.js'
-    // ECharts.registerTheme('ovilia-green', theme);
     
     export default {
         components: {
@@ -153,19 +150,19 @@
                         {
                             name: '本科',
                             type: 'bar',
-                            barWidth: '30%',
+                            barWidth: '25%',
                             data: [10, 52, 3, 5, 4, 1, 15]
                         },
                         {
                             name: '硕士',
                             type: 'bar',
-                            barWidth: '30%',
+                            barWidth: '25%',
                             data: [0, 14, 0, 2, 0, 0, 0]
                         },
                         {
                             name: '博士',
                             type: 'bar',
-                            barWidth: '30%',
+                            barWidth: '25%',
                             data: [0, 2, 0, 4, 0, 0, 0]
                         }
                     ]
@@ -250,9 +247,15 @@
             //     // console.log(data);
             // });
             // console.log(this.$echarts);
-            // window.addEventListener('resize', ()=> {
-            //     this.$echarts.methods.resize();
-            // })
+            // echart 图表页面宽度自适应
+            const _this = this;
+            window.onresize = function () {
+                _this.$refs.echart1.resize();
+                _this.$refs.echart2.resize();
+                _this.$refs.echart3.resize();
+                _this.$refs.echart4.resize();
+                _this.$refs.echart5.resize();
+            }
         }
     }
 </script>

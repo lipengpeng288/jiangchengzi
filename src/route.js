@@ -4,6 +4,7 @@ import Vue from 'vue';
 import Overview from './components/overview'
 import Department from './components/department'
 import Employee from './components/employee'
+import CreateDepartment from './components/createDepartment'
 Vue.use(VueRouter);
 const routes = [{ 
   path: '/overview', 
@@ -14,7 +15,10 @@ const routes = [{
 }, {
   path: '/employee',
   component: Employee
-},{
+}, {
+  path: '/create',
+  component: CreateDepartment 
+}, {
   path: '**',
   redirect: '/overview',
 }]
